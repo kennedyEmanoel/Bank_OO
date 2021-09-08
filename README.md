@@ -1,2 +1,2 @@
 # Bank_OO
-Projeto de programação orientada a objeto - Banco. 
+Projeto de programação orientada a objeto - banco. 
