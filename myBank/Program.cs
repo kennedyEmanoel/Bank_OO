@@ -1,25 +1,22 @@
 ﻿using System;
-
 namespace myBank
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ContaCorrente TioPatinhas = new ContaCorrente("Tio Patinhas", 1111, 2222, 343179960000);
-            ContaCorrente ContaDoKennedy = new ContaCorrente("Kennedy", 1234, 798, 11);
-            ContaCorrente ContaDoJoao = new ContaCorrente("João", 1235, 758, 1901);
-        
-            Console.WriteLine("O Titular da conta é: " + ContaDoKennedy.titular + " || saldo: " + ContaDoKennedy.saldo);
+            
+            ContaCorrente TioPatinhas = new ContaCorrente("Tio Patinhas", 1111, 343179960000);
+            ContaCorrente ContaDoKennedy = new ContaCorrente("Kennedy", 1234, 11);
+            ContaCorrente ContaDoJoao = new ContaCorrente("João", 1235, 1901);
 
-            bool retorno = ContaDoKennedy.Sacar(10);
-            Console.WriteLine("O saldo da conta do Kennedy é: " + ContaDoKennedy.saldo);
+            ContaCorrente TioPatinhas1 = new ContaCorrente("Tio Patinhas", 1111, 343179960000);
+            ContaCorrente ContaDoKennedy1 = new ContaCorrente("Kennedy", 1234, 11);
+            ContaCorrente ContaDoJoao1 = new ContaCorrente("João", 1235, 1901);
 
-            Console.WriteLine("O saldo da conta do Tio Patinhas é de: " + TioPatinhas.saldo);
+            Console.WriteLine("O Saldo do Do Tio Patinhas é de: " + TioPatinhas.Saldo);
 
-            TioPatinhas.Transferir(2000, ContaDoKennedy);
-            Console.WriteLine("O saldo da conta do Kennedy é de: " + ContaDoKennedy.saldo);
-            Console.WriteLine("O saldo da conta do Tio Patinhas é de: " + TioPatinhas.saldo);
+            Console.WriteLine("O total de contas criadas é: " + ContaCorrente.TotalDeContasCriadas);
         }
     }
 }
