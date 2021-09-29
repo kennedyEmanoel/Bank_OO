@@ -5,18 +5,70 @@ namespace myBank
     {
         static void Main(string[] args)
         {
-            
-            ContaCorrente TioPatinhas = new ContaCorrente("Tio Patinhas", 1111, 343179960000);
-            ContaCorrente ContaDoKennedy = new ContaCorrente("Kennedy", 1234, 11);
-            ContaCorrente ContaDoJoao = new ContaCorrente("João", 1235, 1901);
+            Funcionario funcionarioDavid = new Funcionario();
+            funcionarioDavid.Nome = "David Vélez";
+            funcionarioDavid.CPF = "220.965.478-57";
+            funcionarioDavid.Cargo = "Vendedor";
+            funcionarioDavid.Salario = 5200;
 
-            ContaCorrente TioPatinhas1 = new ContaCorrente("Tio Patinhas", 1111, 343179960000);
-            ContaCorrente ContaDoKennedy1 = new ContaCorrente("Kennedy", 1234, 11);
-            ContaCorrente ContaDoJoao1 = new ContaCorrente("João", 1235, 1901);
+            Funcionario funcionarioRubens = new Funcionario();
+            funcionarioRubens.Nome = "Rubens Menin";
+            funcionarioRubens.CPF = "013.255.636-76";
+            funcionarioRubens.Cargo = "Vendedor";
+            funcionarioRubens.Salario = 2700;
 
-            Console.WriteLine("O Saldo do Do Tio Patinhas é de: " + TioPatinhas.Saldo);
+            ContaCorrente TioPatinhas = new ContaCorrente("Tio Patinhas", 1111, 34317996, funcionarioRubens); /* Funcionário Rubens Menin */
+            ContaCorrente Kennedy = new ContaCorrente("Kennedy", 1234, 71.74, funcionarioDavid); /* Funcionário David Vélez*/
+            ContaCorrente ElonMusk = new ContaCorrente("Elon Musk", 1235, 108418728, funcionarioDavid); /* Funcionário David Vélez*/
 
-            Console.WriteLine("O total de contas criadas é: " + ContaCorrente.TotalDeContasCriadas);
+            Console.WriteLine("*****Funcionário*****");
+            Console.WriteLine("Nome: " + funcionarioDavid.Nome);
+            Console.WriteLine("CPF: " + funcionarioDavid.CPF);
+            Console.WriteLine("Cargo: " + funcionarioDavid.Cargo);
+            Console.WriteLine("Salário: R$ " + funcionarioDavid.Salario);
+            Console.WriteLine("");
+
+            Console.WriteLine("*****Funcionário*****");
+            Console.WriteLine("Nome: " + funcionarioRubens.Nome);
+            Console.WriteLine("CPF: " + funcionarioRubens.CPF);
+            Console.WriteLine("Cargo: " + funcionarioRubens.Cargo);
+            Console.WriteLine("Salário: R$ " + funcionarioRubens.Salario);
+            Console.WriteLine("");
+
+            Console.WriteLine("******Clientes******");
+            Console.WriteLine("Titular: " + TioPatinhas.Titular + " | Saldo : " + TioPatinhas.Saldo);
+            Console.WriteLine("Titular: " + Kennedy.Titular + "      | Saldo : " + Kennedy.Saldo);
+            Console.WriteLine("Titular: " + ElonMusk.Titular + "    | Saldo : " + ElonMusk.Saldo);
+            Console.WriteLine("");
+
+            Console.WriteLine("A comissão do vendedor David é " + Math.Round(funcionarioDavid.Comissao, 2) + " R$");
+            Console.WriteLine("A comissão do vendedor Rubens é " + Math.Round(funcionarioRubens.Comissao, 2) + " R$");
+
+            Console.WriteLine("");
+            Console.WriteLine("*******Sacar*******");
+            Console.WriteLine("Saldo da conta do Tio Patinnhas é " + TioPatinhas.Saldo + " R$");
+            Console.WriteLine("Sacar 4500 R$");
+            TioPatinhas.Sacar(4500);
+            Console.WriteLine("Saldo da conta do Tio Patinnhas é " + TioPatinhas.Saldo + " R$");
+            Console.WriteLine("");
+
+            Console.WriteLine("*****Depositar*****");
+            Console.WriteLine("Saldo da conta do Kennedy é " + Kennedy.Saldo);
+            Console.WriteLine("Depositar 4500 R$");
+            Kennedy.Depositar(4500);
+            Console.WriteLine("Saldo da conta do Kennedy é " + Kennedy.Saldo);
+            Console.WriteLine("");
+
+            Console.WriteLine("****Transferir****");
+            Console.WriteLine("Saldo da conta do Elon Musk é " + ElonMusk.Saldo + " R$");
+            Console.WriteLine("Saldo da conta do Kennedy " + Kennedy.Saldo + " R$");
+            Console.WriteLine("Transferir 12500 R$ da conta do Elon Musk para do Kennedy");        
+            ElonMusk.Transferir(12500, Kennedy);
+            Console.WriteLine("Saldo da conta do Elon Musk é " + ElonMusk.Saldo + " R$");
+            Console.WriteLine("Saldo da conta do Kennedy " + Math.Round(Kennedy.Saldo, 2) + " R$");
+            Console.WriteLine("");
+
+            Console.WriteLine("O total de contas criadas é " + ContaCorrente.TotalDeContasCriadas);
         }
     }
 }
