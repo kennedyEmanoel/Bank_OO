@@ -5,17 +5,26 @@ namespace myBank
     {
         static void Main(string[] args)
         {
-            Funcionario funcionarioDavid = new Funcionario{
+            Gerente gerenteCarlos = new Gerente()
+            {
+                Nome = "Carlos",
+                CPF = "987.987.987-98",
+                Salario = 7620
+            };
+
+            Console.WriteLine("O salario do gerente Carlos é: " + gerenteCarlos.Salario);
+
+            Vendedor funcionarioDavid = new Vendedor
+            {
                 Nome = "David Vélez",
                 CPF = "220.965.478-57",
-                Cargo = "Vendedor",
                 Salario = 5200
             };
-            
-            Funcionario funcionarioRubens = new Funcionario{
+
+            Vendedor funcionarioRubens = new Vendedor
+            {
                 Nome = "Rubens Menin",
                 CPF = "013.255.636-76",
-                Cargo = "Vendedor",
                 Salario = 2700
             };
 
@@ -23,7 +32,7 @@ namespace myBank
             ContaCorrente Kennedy = new ContaCorrente("Kennedy", 1234, 71.74, funcionarioDavid); /* Funcionário David Vélez*/
             ContaCorrente ElonMusk = new ContaCorrente("Elon Musk", 1235, 108418728, funcionarioDavid); /* Funcionário David Vélez*/
 
-            Console.WriteLine("*****Funcionário*****");
+            /* Console.WriteLine("*****Funcionário*****");
             Console.WriteLine("Nome: " + funcionarioDavid.Nome);
             Console.WriteLine("CPF: " + funcionarioDavid.CPF);
             Console.WriteLine("Cargo: " + funcionarioDavid.Cargo);
@@ -64,13 +73,13 @@ namespace myBank
             Console.WriteLine("****Transferir****");
             Console.WriteLine("Saldo da conta do Elon Musk é " + ElonMusk.Saldo + " R$");
             Console.WriteLine("Saldo da conta do Kennedy " + Kennedy.Saldo + " R$");
-            Console.WriteLine("Transferir 12500 R$ da conta do Elon Musk para do Kennedy");        
+            Console.WriteLine("Transferir 12500 R$ da conta do Elon Musk para conta do Kennedy");
             ElonMusk.Transferir(12500, Kennedy);
             Console.WriteLine("Saldo da conta do Elon Musk é " + ElonMusk.Saldo + " R$");
             Console.WriteLine("Saldo da conta do Kennedy " + Math.Round(Kennedy.Saldo, 2) + " R$");
             Console.WriteLine("");
 
-            Console.WriteLine("O total de contas criadas é " + ContaCorrente.TotalDeContasCriadas); 
+            Console.WriteLine("O total de contas criadas é " + ContaCorrente.TotalDeContasCriadas); */
         }
     }
 }

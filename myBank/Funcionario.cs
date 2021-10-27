@@ -1,25 +1,22 @@
-public class Funcionario
+public abstract class Funcionario
 {
-   public string Nome { get; set; }
-   public string CPF { get; set; }
-   public string Cargo { get; set; }
-   public double Salario { get; set; }
-   public double Comissao { get; set; }
+    public string Nome { get; set; }
+    public string CPF { get; set; }
+    public string Cargo { get; set; }
+    public double Salario { get; set; }
+    public double Comissao { get; set; }
 
-   private double _bonificacao;
-   public double Bonificacao { 
-      get{
-         return _bonificacao;
-      } 
-      set{
-         if (this.Cargo == "Vendedor")
+    private protected double _bonificacao;
+
+    public virtual double Bonificacao
+    {
+         get
          {
-            _bonificacao += value * 0.02;
+            return _bonificacao;
          }
-         if (this.Cargo == "Diretor")
+         set
          {
-            _bonificacao += value * 0.08;
+            _bonificacao += Salario * 0.01;
          }
-      } 
-   }
+    }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jNPvUOez0xSr1P5lb6nZDJBcwuDogVfemoRAVIz0/G6xX/M16Q8LMsyN3SHHMAhQxc6aAP8/GttHRg+194noGg==",
+  "dgSpecHash": "Cd7uoLPoFJxKQVmy+I2QE1mba5guSO66mfk9K37cLTIsbMLJKNk2oC0F/wuw3wKWFFHG6WhpYWg8DJO32JM64g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenne\\Documents\\aulas\\C#\\Bank_OO\\myBank\\myBank.csproj",
+  "projectFilePath": "C:\\Users\\kenne\\Documents\\aulas\\C#\\Bank_OO\\Bank_OO\\myBank\\myBank.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
